@@ -31,29 +31,27 @@ services:
   client_config: {}
   server_config: {}
 cta: {preset: feedback_form_welcome}
-package_name: Feedback_Form_1
+startup: {type: form, module: Connexion}
+package_name: Pharma_py
 allow_embedding: false
-name: Feedback Form 1
+name: Pharma_py
 runtime_options: {version: 2, server_version: python3-sandbox, client_version: '3',
   server_spec: null}
-metadata: {}
-startup_form: HomeForm
+metadata: {title: PharmaStore}
+startup_form: null
 db_schema:
-  feedback:
+  admin:
     client: none
     server: full
     columns:
-    - name: name
+    - name: id
       admin_ui: {width: 200, order: 0}
-      type: string
+      type: number
     - name: email
       admin_ui: {width: 200, order: 1}
       type: string
-    - name: feedback
+    - name: mot_de_passe
       admin_ui: {width: 200, order: 2}
       type: string
-    - name: created
-      admin_ui: {width: 200, order: 3}
-      type: datetime
-    title: Feedback
+    title: admin
 renamed: true
