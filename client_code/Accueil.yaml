@@ -19,17 +19,23 @@ components:
   type: ColumnPanel
   layout_properties: {slot: left-nav}
   components:
-  - name: primary_color_1
-    properties: {text: Stock, role: null, background: '#689674', foreground: 'theme:White',
-      align: full}
-    type: Button
-    layout_properties: {grid_position: 'BQYYAR,OFOAFV', full_width_row: false}
-    data_bindings: []
   - name: primary_color_1_copy_1
     properties: {text: Clients, role: null, background: '#689674', foreground: 'theme:White',
       align: full}
     type: Button
     layout_properties: {grid_position: 'UCHPTB,YFTWGN'}
+    data_bindings: []
+  - name: primary_color_1_copy_1_copy_2
+    properties: {text: ventes, role: null, background: '#689674', foreground: 'theme:White',
+      align: full}
+    type: Button
+    layout_properties: {grid_position: 'IKWGPQ,ACZPZN'}
+    data_bindings: []
+  - name: primary_color_1
+    properties: {text: Stock, role: null, background: '#689674', foreground: 'theme:White',
+      align: full}
+    type: Button
+    layout_properties: {grid_position: 'JEYZDU,QDHZAW'}
     data_bindings: []
   - name: primary_color_1_copy_1_copy_1
     properties: {text: COmmandes, role: null, background: '#689674', foreground: 'theme:White',
