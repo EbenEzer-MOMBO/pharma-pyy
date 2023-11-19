@@ -46,6 +46,7 @@ components:
     type: Button
     layout_properties: {grid_position: 'UCHPTB,YFTWGN'}
     data_bindings: []
+    event_bindings: {click: primary_color_1_copy_1_click}
   - name: primary_color_1_copy_1_copy_2
     properties: {text: ventes, role: null, background: '#689674', foreground: 'theme:White',
       align: full}

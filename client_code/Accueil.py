@@ -11,3 +11,6 @@ class Accueil(AccueilTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run when the form opens.
+
+  def primary_color_1_copy_1_click(self, **event_args):
+    open_form('Clients')
