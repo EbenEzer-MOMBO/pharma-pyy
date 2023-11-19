@@ -13,5 +13,18 @@ class Connexion(ConnexionTemplate):
     # Any code you write here will run before the form opens.
 
   def button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    pass
+    email = self.email.text
+    password = self.passwd.text
+    
+    # Appel à la fonction de connexion avec les valeurs des champs texte
+    result = anvil.server.call('Connexion', email, password)
+    
+    # Faites quelque chose avec le résultat, comme afficher un message à l'utilisateur
+    if result == "Connexion réussie":
+        # Connexion réussie
+        print("Connexion réussie !")
+        open_form('Accueil')
+    else:
+        # Connexion échouée
+        print("Email ou mot de passe incorrect.")
+        # Afficher un message à l'utilisateur ou effectuer d'autres actions
