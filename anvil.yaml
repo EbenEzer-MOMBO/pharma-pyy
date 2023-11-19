@@ -54,9 +54,18 @@ db_schema:
       admin_ui: {width: 200, order: 2}
       type: string
     title: admin
-  table_2:
+  client:
     client: none
     server: full
-    columns: []
-    title: Table 2
+    columns:
+    - name: id
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: nom_complet
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: adresse
+      admin_ui: {width: 200, order: 2}
+      type: string
+    title: client
 renamed: true

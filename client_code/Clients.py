@@ -9,5 +9,5 @@ class Clients(ClientsTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
+    self.afficher_clients.items = anvil.server.call('ListeClients')
     # Any code you write here will run when the form opens.
