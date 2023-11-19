@@ -1,6 +1,6 @@
 container:
   type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
+  properties: {html: '@theme:standard-page.html', background: '#bffdcb'}
 components:
 - type: ColumnPanel
   properties: {}
@@ -14,3 +14,7 @@ components:
   properties: {role: headline, text: PharmaStore}
   type: Label
   layout_properties: {slot: title}
+- name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {slot: left-nav}
