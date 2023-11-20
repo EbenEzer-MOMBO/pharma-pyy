@@ -1,0 +1,8 @@
+is_package: true
+container: {type: DataRowPanel}
+components:
+- name: button_1
+  properties: {text: '', icon: 'fa:trash', foreground: '#da6767'}
+  type: Button
+  layout_properties: {column: IWTOEE}
+  event_bindings: {click: button_1_click}

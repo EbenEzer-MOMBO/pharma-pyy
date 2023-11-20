@@ -25,3 +25,7 @@ def AjoutClient(nom, adresse):
 
     # Ajouter une nouvelle ligne avec le nouvel identifiant
     app_tables.client.add_row(id=new_id, nom_complet=nom, adresse=adresse)
+
+@anvil.server.callable
+def SupprimerClient(client):
+  client.delete()

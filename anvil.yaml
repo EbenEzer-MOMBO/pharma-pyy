@@ -84,5 +84,8 @@ db_schema:
     - name: prix
       admin_ui: {width: 200, order: 3}
       type: number
+    - name: date_ajout
+      admin_ui: {width: 200, order: 4}
+      type: date
     title: produit
 renamed: true
