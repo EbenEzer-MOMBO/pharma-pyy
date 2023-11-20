@@ -11,11 +11,25 @@ components:
     properties: {role: headline, text: Liste des clients, bold: true, font_size: 20}
     type: Label
     layout_properties: {grid_position: 'VNLSCT,TGNYOQ'}
+  - name: data_row_panel_1
+    properties: {}
+    type: DataRowPanel
+    layout_properties: {grid_position: 'XXXTYT,IXGWCT'}
+    components:
+    - name: nom_complet
+      properties: {placeholder: Nom complet}
+      type: TextBox
+      layout_properties: {}
+  - name: adresse
+    properties: {placeholder: Adresse}
+    type: TextBox
+    layout_properties: {grid_position: 'XXXTYT,DXEXNF'}
   - name: button_1
     properties: {text: Ajouter, align: right, background: 'theme:Secondary 500', foreground: 'theme:White',
       icon: 'fa:plus'}
     type: Button
-    layout_properties: {grid_position: 'VNLSCT,CGBLQF'}
+    layout_properties: {grid_position: 'XXXTYT,BRUVIW'}
+    event_bindings: {click: button_1_click}
   - name: afficher_clients
     properties:
       columns:
@@ -71,6 +85,7 @@ components:
     type: Button
     layout_properties: {grid_position: 'JEYZDU,QDHZAW'}
     data_bindings: []
+    event_bindings: {click: primary_color_1_click}
   - name: primary_color_1_copy_1_copy_1
     properties: {text: COmmandes, role: null, background: '#689674', foreground: 'theme:White',
       align: full}

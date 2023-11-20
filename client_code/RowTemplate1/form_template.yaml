@@ -1,3 +1,7 @@
 is_package: true
 container: {type: DataRowPanel}
-components: []
+components:
+- name: button_1
+  properties: {text: '', icon: 'fa:trash', foreground: '#e15656'}
+  type: Button
+  layout_properties: {column: GDTMUT}

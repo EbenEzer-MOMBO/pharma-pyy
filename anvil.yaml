@@ -68,4 +68,21 @@ db_schema:
       admin_ui: {width: 200, order: 2}
       type: string
     title: client
+  produit:
+    client: none
+    server: full
+    columns:
+    - name: id
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: libelle
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: qte
+      admin_ui: {width: 200, order: 2}
+      type: number
+    - name: prix
+      admin_ui: {width: 200, order: 3}
+      type: number
+    title: produit
 renamed: true
