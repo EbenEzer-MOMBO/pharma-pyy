@@ -5,3 +5,7 @@ components:
   properties: {text: '', icon: 'fa:trash', foreground: '#e15656'}
   type: Button
   layout_properties: {column: GDTMUT}
+- name: button_2
+  properties: {text: '', icon: 'fa:pencil'}
+  type: Button
+  layout_properties: {column: GDTMUT}

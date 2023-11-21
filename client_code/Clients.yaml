@@ -35,7 +35,7 @@ components:
       columns:
       - {id: JKSDUP, title: '#', data_key: id, width: 59, expand: false}
       - {id: VJQQOR, title: Nom complet, data_key: nom_complet, width: 415, expand: false}
-      - {id: OJLQEN, title: Adresse, data_key: adresse, width: 323, expand: false}
+      - {id: OJLQEN, title: Adresse, data_key: adresse, width: 301, expand: false}
       - {id: GDTMUT, data_key: column_1, title: Action}
     type: DataGrid
     components:
