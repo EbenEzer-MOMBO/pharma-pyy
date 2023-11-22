@@ -29,3 +29,15 @@ class Clients(ClientsTemplate):
 
   def primary_color_1_click(self, **event_args):
     open_form('Stock')
+
+  def primary_color_1_copy_1_copy_1_click(self, **event_args):
+    # Initialise an empty dictionary to store the user inputs
+    new_entry = {}
+    # Open an alert displaying the 'EntryEdit' Form
+    save_clicked = alert(
+      content=ModalClient,
+      title="Add Entry",
+      large=True,
+      buttons=[("Save", True), ("Cancel", False)]
+    )
+    
