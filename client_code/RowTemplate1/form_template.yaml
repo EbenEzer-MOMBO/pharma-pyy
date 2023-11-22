@@ -9,16 +9,7 @@ components:
   properties: {text: '', icon: 'fa:pencil'}
   type: Button
   layout_properties: {column: GDTMUT}
-- name: data_row_panel_1
-  properties: {}
-  type: DataRowPanel
-  layout_properties: {column: 'null'}
-  components:
-  - name: text_box_1
-    properties: {}
-    type: TextBox
-    layout_properties: {column: VJQQOR}
-  - name: text_box_2
-    properties: {}
-    type: TextBox
-    layout_properties: {column: VJQQOR}
+- name: text_box_1
+  properties: {text: ''}
+  type: TextBox
+  layout_properties: {column: VJQQOR}
