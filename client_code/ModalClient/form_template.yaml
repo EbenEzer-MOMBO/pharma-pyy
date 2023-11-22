@@ -17,8 +17,15 @@ components:
     properties: {}
     type: TextBox
     layout_properties: {grid_position: 'ZBBCTR,FCHNJZ JEWHJZ,VETPSC'}
+    data_bindings:
+    - {property: text, code: 'self.item[''nom_complet'']', writeback: false}
   - name: text_box_2
     properties: {}
     type: TextBox
     layout_properties: {grid_position: 'ZBBCTR,FCHNJZ IGYSTW,EKKYJI'}
+    data_bindings:
+    - {property: text, code: 'self.item[''adresse'']', writeback: false}
 is_package: true
+custom_component: true
+properties:
+- {name: client, type: object, important: true, default_binding_prop: true}

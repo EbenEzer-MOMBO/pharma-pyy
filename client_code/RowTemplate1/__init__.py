@@ -19,9 +19,12 @@ class RowTemplate1(RowTemplate1Template):
 
   def button_1_copy_1_click(self, **event_args):
     client_copy = dict(self.item)
-    alert(
+    save_btn = alert(
       content=ModalClient(item=client_copy),
       title="Modifier informations du client",
       large=True,
       buttons=[("Enregistrer", True), ("Annuler", False)],
     )
+    if save_btn:
+      anvil.server.call('ModifierClient', self.item, client_copy)
+      self.refresh_data_bindings()

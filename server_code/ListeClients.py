@@ -3,7 +3,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
-import random
+import datetime
 
 @anvil.server.callable
 def ListeClients():
@@ -25,6 +25,14 @@ def AjoutClient(nom, adresse):
 
     # Ajouter une nouvelle ligne avec le nouvel identifiant
     app_tables.client.add_row(id=new_id, nom_complet=nom, adresse=adresse)
+
+@anvil.server.callable
+def ModifierClient(client, client_dict):
+  # check that the article given is really a row in the ‘articles’ table
+  if app_tables.client.has_row(client):
+    client.update(**client_dict)
+  else:
+    raise Exception("Article non existant")
 
 @anvil.server.callable
 def SupprimerClient(client):
