@@ -5,3 +5,8 @@ components:
   properties: {text: '', icon: 'fa:trash', foreground: '#e15656'}
   type: Button
   layout_properties: {column: GDTMUT}
+- name: button_1_copy_1
+  properties: {text: '', icon: 'fa:pencil', foreground: 'theme:Secondary 500'}
+  type: Button
+  layout_properties: {column: GDTMUT}
+  event_bindings: {click: button_1_copy_1_click}
