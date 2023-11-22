@@ -5,11 +5,9 @@ components:
   properties: {text: '', icon: 'fa:trash', foreground: '#e15656'}
   type: Button
   layout_properties: {column: GDTMUT}
-- name: button_2
-  properties: {text: '', icon: 'fa:pencil'}
-  type: Button
-  layout_properties: {column: GDTMUT}
-- name: text_box_1
-  properties: {text: ''}
+- name: text_box_2
+  properties: {placeholder: adresse}
   type: TextBox
-  layout_properties: {column: VJQQOR}
+  layout_properties: {column: OJLQEN}
+  data_bindings:
+  - {property: text, code: 'self.item['''']', writeback: false}
