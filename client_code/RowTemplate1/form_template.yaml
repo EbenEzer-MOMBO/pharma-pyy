@@ -5,8 +5,3 @@ components:
   properties: {text: '', icon: 'fa:trash', foreground: '#e15656'}
   type: Button
   layout_properties: {column: GDTMUT}
-- name: text_box_2
-  properties: {placeholder: adresse}
-  type: TextBox
-  layout_properties: {column: OJLQEN}
-  data_bindings: []
