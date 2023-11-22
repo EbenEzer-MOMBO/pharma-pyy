@@ -9,5 +9,4 @@ components:
   properties: {placeholder: adresse}
   type: TextBox
   layout_properties: {column: OJLQEN}
-  data_bindings:
-  - {property: text, code: 'self.item['''']', writeback: false}
+  data_bindings: []
