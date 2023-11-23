@@ -17,5 +17,23 @@ class RowTemplate2(RowTemplate2Template):
     pass
 
   def text_box_1_pressed_enter(self, **event_args):
-    """This method is called when the user presses Enter in this text box"""
-    pass
+    self.ModifierProduit()
+
+  def text_box_2_pressed_enter(self, **event_args):
+    self.ModifierProduit()
+
+  def text_box_3_pressed_enter(self, **event_args):
+    self.ModifierProduit()
+
+  def ModifierProduit(self):
+    if self.text_box_1.text!="" and self.text_box_2.text!="" and self.text_box_3.text!="":
+      modifierProduit = anvil.server.call(
+        'ModifierProduit',
+        self.item,
+        libelle=self.text_box_1.text,
+        qte=self.text_box_2.text,
+        prix=self.text_box_3.text,
+      )
+      
+    else:
+      alert('Veuillez remplir tous les champs !')

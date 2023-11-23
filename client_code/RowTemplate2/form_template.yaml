@@ -19,9 +19,11 @@ components:
   layout_properties: {column: OJLQEN}
   data_bindings:
   - {property: text, code: 'self.item[''qte'']', writeback: false}
+  event_bindings: {pressed_enter: text_box_2_pressed_enter}
 - name: text_box_3
   properties: {placeholder: prix, type: number}
   type: TextBox
   layout_properties: {column: CQKFPW}
   data_bindings:
   - {property: text, code: 'self.item[''prix'']', writeback: false}
+  event_bindings: {pressed_enter: text_box_3_pressed_enter}

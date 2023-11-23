@@ -10,6 +10,10 @@ def ListeProduits():
   return app_tables.produit.search()
 
 @anvil.server.callable
+def ModifierProduit(produit, libelle, qte, prix):
+  produit.update(libelle=libelle, qte=qte, prix=prix, date_ajout=datetime.date.today())
+
+@anvil.server.callable
 def AjouterProduit(libelle, qte, prix):
     # Récupérer toutes les lignes de la table
     rows = app_tables.produit.search()
