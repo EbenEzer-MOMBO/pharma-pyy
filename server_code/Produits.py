@@ -31,3 +31,7 @@ def AjouterProduit(libelle, qte, prix):
 
     # Ajouter une nouvelle ligne avec le nouvel identifiant et la date actuelle
     app_tables.produit.add_row(id=new_id, libelle=libelle, qte=qte, prix=prix, date_ajout=date_ajout)
+
+@anvil.server.callable
+def SupprimerProduit(produit):
+  produit.delete()

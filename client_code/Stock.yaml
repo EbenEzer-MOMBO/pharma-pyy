@@ -41,7 +41,7 @@ components:
       - {id: VJQQOR, title: Libellé, data_key: libelle, width: 266, expand: false}
       - {id: OJLQEN, title: Qté, data_key: qte, width: 76, expand: false}
       - {id: CQKFPW, data_key: prix, title: Prix, width: 171, expand: false}
-      - {id: TDICCN, data_key: date_ajout, title: Ajouté le, width: 209, expand: false}
+      - {id: TDICCN, data_key: date_ajout, title: Modifié le, width: 209, expand: false}
       - {id: IWTOEE, data_key: column_1, title: Action}
     type: DataGrid
     components:

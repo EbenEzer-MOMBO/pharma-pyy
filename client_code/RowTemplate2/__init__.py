@@ -13,8 +13,8 @@ class RowTemplate2(RowTemplate2Template):
     # Any code you write here will run before the form opens.
 
   def button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    pass
+    anvil.server.call('SupprimerProduit', self.item)
+    self.parent.raise_event()
 
   def text_box_1_pressed_enter(self, **event_args):
     self.ModifierProduit()
