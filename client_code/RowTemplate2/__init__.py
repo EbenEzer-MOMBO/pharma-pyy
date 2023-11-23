@@ -34,6 +34,6 @@ class RowTemplate2(RowTemplate2Template):
         qte=self.text_box_2.text,
         prix=self.text_box_3.text,
       )
-      
+      alert('Modifié avec succès !')
     else:
       alert('Veuillez remplir tous les champs !')
