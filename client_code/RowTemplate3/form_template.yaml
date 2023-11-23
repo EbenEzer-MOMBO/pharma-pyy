@@ -1,0 +1,7 @@
+is_package: true
+container: {type: DataRowPanel}
+components:
+- name: button_1
+  properties: {text: '', icon: 'fa:trash', foreground: '#f24545'}
+  type: Button
+  layout_properties: {column: AESITI}
