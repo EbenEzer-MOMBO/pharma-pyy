@@ -26,5 +26,9 @@ class RowTemplate1(RowTemplate1Template):
       buttons=[("Enregistrer", True), ("Annuler", False)],
     )
     if save_btn:
-      anvil.server.call('ModifierClient', self.item, client_copy)
-      self.refresh_data_bindings()
+      mise_a_jour_reussie = anvil.server.call('ModifierClient', self.item, client_copy)
+      if mise_a_jour_reussie:
+          print("Mise à jour réussie côté client")
+          self.refresh_data_bindings()
+      else:
+          print("Échec de la mise à jour côté client")

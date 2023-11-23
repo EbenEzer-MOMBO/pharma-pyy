@@ -15,3 +15,7 @@ class RowTemplate2(RowTemplate2Template):
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     pass
+
+  def text_box_1_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    pass

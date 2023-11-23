@@ -6,3 +6,22 @@ components:
   type: Button
   layout_properties: {column: IWTOEE}
   event_bindings: {click: button_1_click}
+- name: text_box_1
+  properties: {placeholder: Libellé}
+  type: TextBox
+  layout_properties: {column: VJQQOR}
+  data_bindings:
+  - {property: text, code: 'self.item[''libelle'']', writeback: false}
+  event_bindings: {pressed_enter: text_box_1_pressed_enter}
+- name: text_box_2
+  properties: {placeholder: qté, type: number}
+  type: TextBox
+  layout_properties: {column: OJLQEN}
+  data_bindings:
+  - {property: text, code: 'self.item[''qte'']', writeback: false}
+- name: text_box_3
+  properties: {placeholder: prix, type: number}
+  type: TextBox
+  layout_properties: {column: CQKFPW}
+  data_bindings:
+  - {property: text, code: 'self.item[''prix'']', writeback: false}

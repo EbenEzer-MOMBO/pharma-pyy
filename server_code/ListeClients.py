@@ -30,9 +30,10 @@ def AjoutClient(nom, adresse):
 def ModifierClient(client, client_dict):
   # check that the article given is really a row in the ‘articles’ table
   if app_tables.client.has_row(client):
-    client.update(**client_dict)
+    client.update(nom_complet=client['nom_complet'], adresse=client['adresse'])
+    print("Article existant")
   else:
-    raise Exception("Article non existant")
+    print("Article non existant")
 
 @anvil.server.callable
 def SupprimerClient(client):

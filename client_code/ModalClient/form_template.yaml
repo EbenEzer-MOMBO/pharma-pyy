@@ -26,6 +26,5 @@ components:
     data_bindings:
     - {property: text, code: 'self.item[''adresse'']', writeback: false}
 is_package: true
-custom_component: true
-properties:
-- {name: client, type: object, important: true, default_binding_prop: true}
+custom_component: false
+properties: []
