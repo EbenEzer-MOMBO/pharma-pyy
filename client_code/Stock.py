@@ -28,6 +28,8 @@ class Stock(StockTemplate):
       self.libelle.text = ''
       self.qte.text = ''
       self.prix.text = ''
+    else:
+      alert('Veuillez remplir tous les champs !')
 
   def primary_color_1_copy_1_click(self, **event_args):
     open_form('Clients')

@@ -1,0 +1,95 @@
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html', background: ''}
+components:
+- type: ColumnPanel
+  properties: {}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: headline_2
+    properties: {role: headline, text: Ventes effectuées, bold: true, font_size: 20}
+    type: Label
+    layout_properties: {grid_position: 'VNLSCT,TGNYOQ'}
+  - name: data_row_panel_1
+    properties: {}
+    type: DataRowPanel
+    layout_properties: {grid_position: 'XXXTYT,IXGWCT'}
+    components:
+    - name: drop_down_2
+      properties: {placeholder: Client, include_placeholder: true}
+      type: DropDown
+      layout_properties: {column: 'null'}
+  - name: drop_down_3
+    properties: {placeholder: Produit, include_placeholder: true}
+    type: DropDown
+    layout_properties: {grid_position: 'XXXTYT,OBETCW'}
+    event_bindings: {change: drop_down_3_change}
+  - name: text_box_1
+    properties: {type: number, placeholder: prix, enabled: false}
+    type: TextBox
+    layout_properties: {grid_position: 'XXXTYT,VCCVHU'}
+    data_bindings:
+    - {property: text, code: 'self.item[''prix'']', writeback: false}
+  - name: text_box_2
+    properties: {placeholder: qté, type: number}
+    type: TextBox
+    layout_properties: {grid_position: 'XXXTYT,RUXMDH'}
+  - name: button_1
+    properties: {text: Ajouter, align: right, background: 'theme:Secondary 500', foreground: 'theme:White',
+      icon: 'fa:plus'}
+    type: Button
+    layout_properties: {grid_position: 'XXXTYT,BRUVIW'}
+    event_bindings: {click: button_1_click}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components:
+  - name: label_1
+    properties: {icon: 'fa:user-circle'}
+    type: Label
+    layout_properties: {}
+    data_bindings: []
+  - name: drop_down_1
+    properties: {include_placeholder: false, placeholder: ''}
+    type: DropDown
+    layout_properties: {}
+    event_bindings: {change: drop_down_1_change}
+- name: headline_1
+  properties: {role: headline, text: PharmaStore, icon: 'fa:shopping-cart'}
+  type: Label
+  layout_properties: {slot: title}
+- name: column_panel_1
+  properties: {col_spacing: huge}
+  type: ColumnPanel
+  layout_properties: {slot: left-nav}
+  components:
+  - name: primary_color_1_copy_1
+    properties: {text: Clients, role: null, background: '#689674', foreground: 'theme:White',
+      align: full, visible: true, enabled: true}
+    type: Button
+    layout_properties: {grid_position: 'UCHPTB,YFTWGN'}
+    data_bindings: []
+  - name: primary_color_1_copy_1_copy_2
+    properties: {text: ventes, role: null, background: '#689674', foreground: 'theme:White',
+      align: full, enabled: false}
+    type: Button
+    layout_properties: {grid_position: 'IKWGPQ,ACZPZN'}
+    data_bindings: []
+    event_bindings: {click: primary_color_1_copy_1_copy_2_click}
+  - name: primary_color_1
+    properties: {text: Stock, role: null, background: '#689674', foreground: 'theme:White',
+      align: full}
+    type: Button
+    layout_properties: {grid_position: 'JEYZDU,QDHZAW'}
+    data_bindings: []
+    event_bindings: {click: primary_color_1_click}
+  - name: primary_color_1_copy_1_copy_1
+    properties: {text: COmmandes, role: null, background: '#689674', foreground: 'theme:White',
+      align: full}
+    type: Button
+    layout_properties: {grid_position: 'SPKQZE,RODJZY'}
+    data_bindings: []
+    event_bindings: {click: primary_color_1_copy_1_copy_1_click}
+  data_bindings: []

@@ -13,8 +13,10 @@ class RowTemplate2(RowTemplate2Template):
     # Any code you write here will run before the form opens.
 
   def button_1_click(self, **event_args):
-    anvil.server.call('SupprimerProduit', self.item)
-    self.parent.raise_event()
+    confirmer = confirm('Supprimer le produit ?')
+    if confirmer:
+      anvil.server.call('SupprimerProduit', self.item)
+      open_form('Stock')
 
   def text_box_1_pressed_enter(self, **event_args):
     self.ModifierProduit()
@@ -25,6 +27,11 @@ class RowTemplate2(RowTemplate2Template):
   def text_box_3_pressed_enter(self, **event_args):
     self.ModifierProduit()
 
+  def text_box_1_lost_focus(self, **event_args):
+    self.ModifierProduit()
+
+  
+  
   def ModifierProduit(self):
     if self.text_box_1.text!="" and self.text_box_2.text!="" and self.text_box_3.text!="":
       modifierProduit = anvil.server.call(
@@ -37,3 +44,11 @@ class RowTemplate2(RowTemplate2Template):
       alert('Modifié avec succès !')
     else:
       alert('Veuillez remplir tous les champs !')
+
+  def text_box_2_lost_focus(self, **event_args):
+    self.ModifierProduit()
+
+  def text_box_3_lost_focus(self, **event_args):
+    self.ModifierProduit()
+
+  

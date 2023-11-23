@@ -58,23 +58,20 @@ db_schema:
     client: none
     server: full
     columns:
-    - name: id
-      admin_ui: {width: 200, order: 0}
-      type: number
     - name: nom_complet
       admin_ui: {width: 200, order: 1}
       type: string
     - name: adresse
       admin_ui: {width: 200, order: 2}
       type: string
+    - name: id
+      admin_ui: {width: 200, order: 3}
+      type: string
     title: client
   produit:
     client: none
     server: full
     columns:
-    - name: id
-      admin_ui: {width: 200, order: 0}
-      type: number
     - name: libelle
       admin_ui: {width: 200, order: 1}
       type: string
@@ -87,5 +84,8 @@ db_schema:
     - name: date_ajout
       admin_ui: {width: 200, order: 4}
       type: date
+    - name: id
+      admin_ui: {width: 200, order: 5}
+      type: string
     title: produit
 renamed: true
