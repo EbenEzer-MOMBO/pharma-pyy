@@ -1,0 +1,12 @@
+is_package: true
+container: {type: DataRowPanel}
+components:
+- name: button_1
+  properties: {text: Reçu, background: 'theme:Primary 700', foreground: 'theme:White',
+    icon: 'fa:check'}
+  type: Button
+  layout_properties: {column: ZURVVB}
+- name: button_2
+  properties: {text: Annuler, background: '#f25a5a', icon: 'fa:close', foreground: 'theme:White'}
+  type: Button
+  layout_properties: {column: ZURVVB}

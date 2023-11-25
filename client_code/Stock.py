@@ -33,3 +33,9 @@ class Stock(StockTemplate):
 
   def primary_color_1_copy_1_click(self, **event_args):
     open_form('Clients')
+
+  def primary_color_1_copy_1_copy_2_click(self, **event_args):
+    open_form('Ventes')
+
+  def primary_color_1_copy_1_copy_1_click(self, **event_args):
+    open_form('Commandes')

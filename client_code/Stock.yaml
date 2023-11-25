@@ -86,6 +86,7 @@ components:
     type: Button
     layout_properties: {grid_position: 'IKWGPQ,ACZPZN'}
     data_bindings: []
+    event_bindings: {click: primary_color_1_copy_1_copy_2_click}
   - name: primary_color_1
     properties: {text: Stock, role: null, background: '#689674', foreground: 'theme:White',
       align: full, enabled: false}
@@ -98,4 +99,5 @@ components:
     type: Button
     layout_properties: {grid_position: 'SPKQZE,RODJZY'}
     data_bindings: []
+    event_bindings: {click: primary_color_1_copy_1_copy_1_click}
   data_bindings: []

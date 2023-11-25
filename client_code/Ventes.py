@@ -41,7 +41,6 @@ class Ventes(VentesTemplate):
       #rafraichir
       self.repeating_panel_1.items = anvil.server.call('ListeVentes')
       #effacer les champs
-      self.drop_client.text = ''
       self.drop_prod.text = ''
       self.text_prix.text = ''
       self.text_qte.text = ''
@@ -56,3 +55,6 @@ class Ventes(VentesTemplate):
 
   def primary_color_1_copy_1_copy_2_click(self, **event_args):
     open_form('Ventes')
+
+  def primary_color_1_copy_1_click(self, **event_args):
+    open_form('Clients')

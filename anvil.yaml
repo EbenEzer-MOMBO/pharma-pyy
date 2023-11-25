@@ -111,4 +111,38 @@ db_schema:
       admin_ui: {width: 200, order: 5}
       type: number
     title: vente
+  commande_attente:
+    client: none
+    server: full
+    columns:
+    - name: id
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: produit
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: qte
+      admin_ui: {width: 200, order: 2}
+      type: number
+    - name: modifie_le
+      admin_ui: {width: 200, order: 3}
+      type: date
+    title: commande_attente
+  commande_recues:
+    client: none
+    server: full
+    columns:
+    - name: id
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: produit
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: qte
+      admin_ui: {width: 200, order: 2}
+      type: number
+    - name: recu_le
+      admin_ui: {width: 200, order: 3}
+      type: date
+    title: commande_recues
 renamed: true

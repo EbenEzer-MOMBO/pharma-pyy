@@ -8,55 +8,56 @@ components:
   layout_properties: {slot: default}
   components:
   - name: headline_2
-    properties: {role: headline, text: Ventes effectuées, bold: true, font_size: 20}
+    properties: {role: headline, text: Commandes en cours, bold: true, font_size: 20}
     type: Label
     layout_properties: {grid_position: 'VNLSCT,TGNYOQ'}
-  - name: data_row_panel_1
-    properties: {}
-    type: DataRowPanel
-    layout_properties: {grid_position: 'XXXTYT,IXGWCT'}
-    components:
-    - name: drop_client
-      properties: {placeholder: Client, include_placeholder: true}
-      type: DropDown
-      layout_properties: {column: 'null'}
-  - name: drop_prod
-    properties: {placeholder: Produit, include_placeholder: true}
-    type: DropDown
-    layout_properties: {grid_position: 'XXXTYT,OBETCW'}
-    event_bindings: {change: drop_prod_change}
-  - name: text_prix
-    properties: {type: number, placeholder: prix, enabled: false}
+  - name: text_box_1
+    properties: {placeholder: Produit}
     type: TextBox
-    layout_properties: {grid_position: 'XXXTYT,VCCVHU'}
-    data_bindings:
-    - {property: text, code: 'self.item[''prix'']', writeback: false}
-  - name: text_qte
-    properties: {placeholder: qté, type: number}
+    layout_properties: {grid_position: 'XXXTYT,ELXSTN'}
+  - name: text_box_2
+    properties: {placeholder: Qté}
     type: TextBox
-    layout_properties: {grid_position: 'XXXTYT,RUXMDH'}
+    layout_properties: {grid_position: 'XXXTYT,VOOXAN'}
   - name: button_1
-    properties: {text: Ajouter, align: right, background: 'theme:Secondary 500', foreground: 'theme:White',
-      icon: 'fa:plus'}
+    properties: {text: Commander, align: right, background: 'theme:Secondary 500',
+      foreground: 'theme:White', icon: 'fa:plus'}
     type: Button
     layout_properties: {grid_position: 'XXXTYT,BRUVIW'}
     event_bindings: {click: button_1_click}
   - name: data_grid_1
     properties:
       columns:
-      - {id: JKSDUP, title: '#', data_key: id, width: 63, expand: false}
-      - {id: VJQQOR, title: Nom complet, data_key: nom_complet, width: 210, expand: false}
-      - {id: OJLQEN, title: Produit, data_key: produit, width: 174, expand: false}
-      - {id: DYXFQO, data_key: qte, title: Qté, width: 72, expand: false}
-      - {id: USUUDO, data_key: delivre_le, title: Délivré le, width: 126, expand: false}
-      - {id: OCGMQA, data_key: total, title: TOTAL, width: 119, expand: false}
-      - {id: AESITI, data_key: column_1, title: Action}
+      - {id: JKSDUP, title: '#', data_key: id, width: 70.69384765625, expand: false}
+      - {id: VJQQOR, title: Produit, data_key: produit, width: 233.42730712890625,
+        expand: false}
+      - {id: ZRTIOD, data_key: qte, title: Qté, width: 71.1634521484375, expand: false}
+      - {id: TYPKZG, data_key: modifie_le, title: Ajouté le}
+      - {id: ZURVVB, data_key: column_2, title: Action}
     type: DataGrid
     components:
     - name: repeating_panel_1
-      properties: {item_template: RowTemplate3}
+      properties: {item_template: RowTemplate4}
       type: RepeatingPanel
-    layout_properties: {grid_position: 'AMBVUA,PHOSAE'}
+    layout_properties: {grid_position: 'RTYUSR,DVRGHM'}
+  - name: headline_2_copy
+    properties: {role: headline, text: Commandes reçues, bold: true, font_size: 20}
+    type: Label
+    layout_properties: {grid_position: ''}
+  - name: data_grid_2
+    properties:
+      columns:
+      - {id: JKSDUP, title: '#', data_key: column_1, width: 68.43585205078125, expand: false}
+      - {id: VJQQOR, title: Produit, data_key: column_2, width: 398.483642578125,
+        expand: false}
+      - {id: OJLQEN, title: Qté, data_key: column_3, width: 152.361083984375, expand: false}
+      - {id: PTJROW, data_key: column_1, title: Reçu le}
+    type: DataGrid
+    components:
+    - name: repeating_panel_2
+      properties: {item_template: RowTemplate5}
+      type: RepeatingPanel
+    layout_properties: {grid_position: 'AIUIQR,YLCAHU UOUBQL,ZWOHMH'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
@@ -87,9 +88,10 @@ components:
     type: Button
     layout_properties: {grid_position: 'UCHPTB,YFTWGN'}
     data_bindings: []
+    event_bindings: {click: primary_color_1_copy_1_click}
   - name: primary_color_1_copy_1_copy_2
     properties: {text: ventes, role: null, background: '#689674', foreground: 'theme:White',
-      align: full, enabled: false}
+      align: full, enabled: true, visible: true}
     type: Button
     layout_properties: {grid_position: 'IKWGPQ,ACZPZN'}
     data_bindings: []
@@ -103,7 +105,7 @@ components:
     event_bindings: {click: primary_color_1_click}
   - name: primary_color_1_copy_1_copy_1
     properties: {text: COmmandes, role: null, background: '#689674', foreground: 'theme:White',
-      align: full}
+      align: full, enabled: false}
     type: Button
     layout_properties: {grid_position: 'SPKQZE,RODJZY'}
     data_bindings: []
