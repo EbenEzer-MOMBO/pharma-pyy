@@ -17,3 +17,9 @@ class RowTemplate4(RowTemplate4Template):
     if confirmer:
       anvil.server.call('AnnulerCommande', self.item)
       open_form('Commandes')
+
+  def button_1_click(self, **event_args):
+    confirmer = confirm('La commande a bien été reçue ?')
+    if confirmer:
+      anvil.server.call('ConfirmerCommande', self.item)
+      open_form('Commandes')

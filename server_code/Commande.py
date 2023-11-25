@@ -27,8 +27,10 @@ def AjouterCommande(produit, qte):
   app_tables.commande_attente.add_row(id=id, produit=produit, qte=qte, modifie_le=ajoute_le)
 
 @anvil.server.callable
-def ConfirmerCommande():
-  passs
+def ConfirmerCommande(commande):
+  id = generate_unique_id()
+  recu_le = datetime.date.today()
+  app_tables.commande_recues.add_row(produit=commande['produit'], qte=commande['qte'], id=id, recu_le=recu_le)
 
 @anvil.server.callable
 def AnnulerCommande(commande):

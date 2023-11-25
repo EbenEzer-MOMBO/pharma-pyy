@@ -16,7 +16,7 @@ components:
     type: TextBox
     layout_properties: {grid_position: 'XXXTYT,ELXSTN'}
   - name: text_box_2
-    properties: {placeholder: Qté}
+    properties: {placeholder: Qté, type: number}
     type: TextBox
     layout_properties: {grid_position: 'XXXTYT,VOOXAN'}
   - name: button_1

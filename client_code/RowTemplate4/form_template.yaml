@@ -6,6 +6,7 @@ components:
     icon: 'fa:check'}
   type: Button
   layout_properties: {column: ZURVVB}
+  event_bindings: {click: button_1_click}
 - name: button_2
   properties: {text: Annuler, background: '#f25a5a', icon: 'fa:close', foreground: 'theme:White'}
   type: Button
