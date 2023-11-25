@@ -36,7 +36,7 @@ components:
       - {id: ZURVVB, data_key: column_2, title: Action}
     type: DataGrid
     components:
-    - name: repeating_panel_1
+    - name: liste_attente
       properties: {item_template: RowTemplate4}
       type: RepeatingPanel
     layout_properties: {grid_position: 'RTYUSR,DVRGHM'}
@@ -54,7 +54,7 @@ components:
       - {id: PTJROW, data_key: column_1, title: Reçu le}
     type: DataGrid
     components:
-    - name: repeating_panel_2
+    - name: liste_recu
       properties: {item_template: RowTemplate5}
       type: RepeatingPanel
     layout_properties: {grid_position: 'AIUIQR,YLCAHU UOUBQL,ZWOHMH'}

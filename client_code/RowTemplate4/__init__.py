@@ -11,3 +11,9 @@ class RowTemplate4(RowTemplate4Template):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+  def button_2_click(self, **event_args):
+    confirmer = confirm('Annuler la commande ?')
+    if confirmer:
+      anvil.server.call('AnnulerCommande', self.item)
+      open_form('Commandes')

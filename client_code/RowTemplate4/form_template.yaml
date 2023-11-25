@@ -10,3 +10,4 @@ components:
   properties: {text: Annuler, background: '#f25a5a', icon: 'fa:close', foreground: 'theme:White'}
   type: Button
   layout_properties: {column: ZURVVB}
+  event_bindings: {click: button_2_click}
