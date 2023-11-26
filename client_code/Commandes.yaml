@@ -47,11 +47,10 @@ components:
   - name: data_grid_2
     properties:
       columns:
-      - {id: JKSDUP, title: '#', data_key: column_1, width: 68.43585205078125, expand: false}
-      - {id: VJQQOR, title: Produit, data_key: column_2, width: 398.483642578125,
-        expand: false}
-      - {id: OJLQEN, title: Qté, data_key: column_3, width: 152.361083984375, expand: false}
-      - {id: PTJROW, data_key: column_1, title: Reçu le}
+      - {id: JKSDUP, title: '#', data_key: id, width: 68.43585205078125, expand: false}
+      - {id: VJQQOR, title: Produit, data_key: produit, width: 398.483642578125, expand: false}
+      - {id: OJLQEN, title: Qté, data_key: qte, width: 152.361083984375, expand: false}
+      - {id: PTJROW, data_key: recu_le, title: Reçu le}
     type: DataGrid
     components:
     - name: liste_recu

@@ -39,4 +39,12 @@ class Clients(ClientsTemplate):
 
   def primary_color_1_copy_1_copy_2_click(self, **event_args):
     open_form('Ventes')
+
+  def text_box_1_change(self, **event_args):
+    nom = self.text_box_1.text.lower()  # Convertir en minuscules
+    results = anvil.server.call('RechercherClient', nom)
+    self.repeating_panel_1.items = results
+
+  def text_box_1_lost_focus(self, **event_args):
+    self.repeating_panel_1.items = anvil.server.call('ListeClients')
     
