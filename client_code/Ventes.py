@@ -37,16 +37,23 @@ class Ventes(VentesTemplate):
     produit = self.drop_prod.selected_value
     prix = self.text_prix.text
     qte = self.text_qte.text
-    if nom_complet!='' and produit!='' and prix!='' and qte!='':
-      anvil.server.call('AjouterVente', nom_complet, produit, prix, qte)
-      #rafraichir
-      self.repeating_panel_1.items = anvil.server.call('ListeVentes')
-      #effacer les champs
-      self.drop_prod.text = ''
-      self.text_prix.text = ''
-      self.text_qte.text = ''
+
+    if nom_complet and produit and prix and qte:
+        # Appeler la fonction serveur pour ajouter la vente
+        quantite_suffisante = anvil.server.call('AjouterVente', nom_complet, produit, prix, qte)
+
+        if quantite_suffisante:
+            # Rafraîchir le RepeatingPanel avec les nouvelles ventes
+            self.repeating_panel_1.items = anvil.server.call('ListeVentes')
+            # Effacer les champs
+            self.drop_prod.text = ''
+            self.text_prix.text = ''
+            self.text_qte.text = ''
+        else:
+            alert("Quantité insuffisante en stock pour cette vente.")
     else:
-      alert('Veuillez remplir tous les champs !')
+        alert('Veuillez remplir tous les champs !')
+
 
   def primary_color_1_click(self, **event_args):
     open_form('Stock')

@@ -34,6 +34,12 @@ def ListeProduits():
   return app_tables.produit.search()
 
 @anvil.server.callable
+def RechercherProduit(produit):
+    # Rechercher les clients dont le nom commence par le texte entré
+    results = [row for row in app_tables.produit.search() if row['libelle'].lower().startswith(produit.lower())]
+    return results
+
+@anvil.server.callable
 def ModifierProduit(produit, libelle, qte, prix):
   produit.update(libelle=libelle, qte=qte, prix=prix, date_ajout=datetime.date.today())
 
@@ -65,11 +71,31 @@ def ListeVentes():
 
 @anvil.server.callable
 def AjouterVente(nom, produit, prix, qte):
-  id = generate_unique_id()
-  delivre_le = datetime.date.today()
-  prix_numerique = float(prix) if isinstance(prix, str) else prix
-  total = prix_numerique * qte
-  app_tables.vente.add_row(id=id, nom_complet=nom, produit=produit, qte=qte, delivre_le=delivre_le, total=total)
+    id = generate_unique_id()
+    delivre_le = datetime.date.today()
+    prix_numerique = float(prix) if isinstance(prix, str) else prix
+    total = prix_numerique * qte
+
+    # Récupérer le produit de la table produit
+    produit_row = app_tables.produit.get(libelle=produit)
+
+    if produit_row is not None:
+        # Vérifier si la quantité en stock est suffisante pour la vente
+        if produit_row['qte'] >= qte:
+            # Déduire la quantité vendue du stock
+            nouvelle_qte = produit_row['qte'] - qte
+            produit_row.update(qte=nouvelle_qte)  # Mettre à jour la quantité dans la table produit
+
+            # Ajouter une nouvelle ligne dans la table vente
+            app_tables.vente.add_row(id=id, nom_complet=nom, produit=produit, qte=qte, delivre_le=delivre_le, total=total)
+            return True  # Indiquer que la vente a été effectuée avec succès
+        else:
+            return False  # Indiquer que la quantité en stock est insuffisante
+    else:
+        # Le produit n'existe pas dans la table produit
+        print("Le produit n'existe pas dans la table produit.")
+        return None  # Indiquer qu'il y a eu un problème lors de la recherche du produit
+
 
 
 #Commande==========================
@@ -110,6 +136,7 @@ def ConfirmerCommande(commande):
         # Ajouter une nouvelle ligne à la table de destination (commande_recues)
         app_tables.commande_recues.add_row(produit=commande['produit'], qte=commande['qte'], id=id, recu_le=recu_le)
     else:
+        
         # Si le produit n'existe pas, ajouter une nouvelle entrée dans la table produit
         app_tables.produit.add_row(libelle=commande['produit'], qte=commande['qte'])
         # Supprimer la ligne de la table source (commande_attente)

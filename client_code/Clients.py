@@ -42,9 +42,9 @@ class Clients(ClientsTemplate):
 
   def text_box_1_change(self, **event_args):
     nom = self.text_box_1.text.lower()  # Convertir en minuscules
+    if nom == '':
+      self.repeating_panel_1.items = anvil.server.call('ListeClients')
     results = anvil.server.call('RechercherClient', nom)
     self.repeating_panel_1.items = results
 
-  def text_box_1_lost_focus(self, **event_args):
-    self.repeating_panel_1.items = anvil.server.call('ListeClients')
     

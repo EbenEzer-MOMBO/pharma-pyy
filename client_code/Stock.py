@@ -39,3 +39,10 @@ class Stock(StockTemplate):
 
   def primary_color_1_copy_1_copy_1_click(self, **event_args):
     open_form('Commandes')
+
+  def text_box_1_change(self, **event_args):
+    produit = self.text_box_1.text.lower()
+    if produit == '':
+      self.repeating_panel_1.items = anvil.server.call('ListeProduits')
+    results = anvil.server.call('RechercherProduit', produit)
+    self.repeating_panel_1.items = results
