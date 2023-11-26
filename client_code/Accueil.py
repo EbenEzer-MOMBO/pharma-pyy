@@ -23,3 +23,6 @@ class Accueil(AccueilTemplate):
 
   def primary_color_1_copy_1_copy_1_click(self, **event_args):
     open_form('Commandes')
+
+  def button_1_click(self, **event_args):
+    open_form('Connexion')

@@ -22,17 +22,22 @@ components:
   name: navbar_links
   layout_properties: {slot: nav-right}
   components:
+  - name: label_2
+    properties: {text: 'Bonjour, Admin', font_size: 14}
+    type: Label
+    layout_properties: {}
   - name: label_1
     properties: {icon: 'fa:user-circle'}
     type: Label
     layout_properties: {}
     data_bindings: []
-  - name: drop_down_1
-    properties: {include_placeholder: false, placeholder: ''}
-    type: DropDown
+  - name: button_1
+    properties: {text: '', foreground: '#ea5757', icon: 'fa:arrow-right'}
+    type: Button
     layout_properties: {}
+    event_bindings: {click: button_1_click}
 - name: headline_1
-  properties: {role: headline, text: PharmaStore}
+  properties: {role: headline, text: PharmaStore, icon: 'fa:shopping-cart'}
   type: Label
   layout_properties: {slot: title}
 - name: column_panel_1

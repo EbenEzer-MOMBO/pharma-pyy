@@ -63,7 +63,11 @@ def SupprimerProduit(produit):
 @anvil.server.callable
 def ListeProduitsDropdown():
     produits = app_tables.produit.search()
-    return [(produit['libelle'], produit['prix']) for produit in produits]
+    return [(produit['libelle'], produit['prix']) for produit in produits if produit['prix'] is not None and produit['prix'] > 0]
+
+@anvil.server.callable
+def ArchiverVente(vente):
+  vente.delete()
 
 @anvil.server.callable
 def ListeVentes():
@@ -119,30 +123,25 @@ def ConfirmerCommande(commande):
     id = generate_unique_id()
     recu_le = datetime.date.today()
 
-    # Convertir le libellé du produit de la commande en minuscules
     libelle_commande = commande['produit'].lower()
 
-    # Rechercher le produit correspondant dans la table produit (en ignorant la casse)
     produit = next((prod for prod in app_tables.produit.search() if prod['libelle'].lower() == libelle_commande), None)
 
     if produit is not None:
-        # Ajouter la quantité de la commande à la quantité existante du produit
         nouvelle_qte = produit['qte'] + commande['qte']
-        produit.update(qte=nouvelle_qte)  # Mettre à jour la quantité du produit dans la table produit
+        produit.update(qte=nouvelle_qte)
 
-        # Supprimer la ligne de la table source (commande_attente)
         app_tables.commande_attente.get(id=commande['id']).delete()
 
-        # Ajouter une nouvelle ligne à la table de destination (commande_recues)
         app_tables.commande_recues.add_row(produit=commande['produit'], qte=commande['qte'], id=id, recu_le=recu_le)
     else:
-        
-        # Si le produit n'existe pas, ajouter une nouvelle entrée dans la table produit
-        app_tables.produit.add_row(libelle=commande['produit'], qte=commande['qte'])
-        # Supprimer la ligne de la table source (commande_attente)
+        new_id = generate_unique_id()
+        # Ajouter une nouvelle entrée dans la table produit avec un nouvel ID et la date d'ajout
+        app_tables.produit.add_row(libelle=commande['produit'], qte=commande['qte'], id=new_id, date_ajout=recu_le, prix=0)
         app_tables.commande_attente.get(id=commande['id']).delete()
         # Ajouter une nouvelle ligne à la table de destination (commande_recues)
         app_tables.commande_recues.add_row(produit=commande['produit'], qte=commande['qte'], id=id, recu_le=recu_le)
+
 
 @anvil.server.callable
 def AnnulerCommande(commande):

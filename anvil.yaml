@@ -31,7 +31,7 @@ services:
   client_config: {}
   server_config: {}
 cta: {preset: feedback_form_welcome}
-startup: {type: form, module: Accueil}
+startup: {type: form, module: Connexion}
 package_name: Pharma_py
 allow_embedding: false
 name: Pharma_py

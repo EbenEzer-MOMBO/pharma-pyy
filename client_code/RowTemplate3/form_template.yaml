@@ -5,3 +5,4 @@ components:
   properties: {text: '', icon: 'fa:trash', foreground: '#f24545'}
   type: Button
   layout_properties: {column: AESITI}
+  event_bindings: {click: button_1_click}
